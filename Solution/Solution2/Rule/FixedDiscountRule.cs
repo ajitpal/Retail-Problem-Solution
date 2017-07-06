@@ -1,7 +1,6 @@
-﻿using System;
-using Solution;
+﻿using System; 
 
-namespace Solution1.Solution2.Rule
+namespace Solution.Solution2.Rule
 {
     public class FixedDiscountRule : IPriceDiscountRule
     {

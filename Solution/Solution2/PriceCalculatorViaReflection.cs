@@ -1,24 +1,31 @@
-﻿using Solution;
-using Solution1.Solution2.Rule;
+﻿using Solution.Solution2.Rule;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Solution1.Solution2
+namespace Solution.Solution2
 {
-    /// <summary>
-    /// main Price calculator
-    /// </summary>
-    public class PriceCalculator : ICalculatePrice
+    public class PriceCalculatorViaReflection : ICalculatePrice
     {
         IList<IPriceDiscountRule> discountRules;
-        public PriceCalculator() //TODO : Inject rules through DI
+        public PriceCalculatorViaReflection()
         {
+            //Via Reflection
             var interfaceType = typeof(IPriceDiscountRule);
-            discountRules = AppDomain.CurrentDomain.GetAssemblies()
+            var allRules = AppDomain.CurrentDomain.GetAssemblies()
               .SelectMany(x => x.GetTypes())
               .Where(x => interfaceType.IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
-              .Select(x => Activator.CreateInstance(x) as IPriceDiscountRule).ToList(); 
+              .Select(x => Activator.CreateInstance(x) as IPriceDiscountRule).ToList();
+            discountRules = new List<IPriceDiscountRule>();
+            foreach (IPriceDiscountRule rule in allRules)
+            {
+                string activeRules = ConfigurationManager.AppSettings["ActiveRules"];
+                if (activeRules.Contains(rule.GetType().Name))
+                    discountRules.Add(rule);
+            }
         }
         public decimal CalculateFinalPrice(StoreUser user, BillItems items)
         {

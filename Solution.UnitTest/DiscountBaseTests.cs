@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Solution.UnitTest.MockData;
-using Solution1;
+using Solution.UnitTest.MockData; 
 
 namespace Solution.UnitTest
 {

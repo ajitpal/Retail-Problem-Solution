@@ -1,11 +1,9 @@
-﻿using Solution;
-
-namespace Solution1.Solution2.Rule
+﻿ namespace Solution.Solution2.Rule
 {
     public interface IPriceDiscountRule
     {
         /// <summary>
-        /// Function to get applicable discount rate
+        /// Function to get applicable discount 
         /// </summary>
         /// <param name="user">Currenr User</param>
         /// <param name="billItemList">Item List of Bill</param>

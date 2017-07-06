@@ -1,4 +1,4 @@
-﻿using Solution1;
+﻿ 
 using System;
 
 namespace Solution.Solution1

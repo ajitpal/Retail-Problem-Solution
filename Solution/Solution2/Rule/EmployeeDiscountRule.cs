@@ -1,6 +1,4 @@
-﻿using Solution;
-
-namespace Solution1.Solution2.Rule
+﻿namespace Solution.Solution2.Rule
 {
     public class EmployeeDiscountRule : IPriceDiscountRule
     {

@@ -54,7 +54,8 @@
     <Compile Include="MockData\FakeDataGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution1\Solution1Tests.cs" />
-    <Compile Include="Solution2\Solution2Tests.cs" />
+    <Compile Include="Solution2\Solution2TestsViaDI.cs" />
+    <Compile Include="Solution2\Solution2TestsViaReflection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solution\Solution.csproj">
@@ -62,7 +63,9 @@
       <Name>Solution</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

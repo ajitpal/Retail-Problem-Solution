@@ -2,7 +2,7 @@
 using Solution.Solution1;
 using Solution.UnitTest;
 
-namespace Solution1.UnitTest.Solution1
+namespace Solution.UnitTest.Solution1
 {
     [TestClass]
     public class Solution1Tests

@@ -1,6 +1,6 @@
 ﻿using Solution;
 
-namespace Solution1
+namespace Solution
 {
     public interface ICalculatePrice
     {
