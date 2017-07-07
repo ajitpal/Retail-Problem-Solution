@@ -25,3 +25,11 @@ Design a system along with code and test cases such that given a bill, it finds 
  2. Point no 4 is fixed and is mandatory on whole bill amount before applying any percentage discount. 
     This would be addon after percentage discount is applied.
     
+
+Steps to Run:
+
+1. Download project as Zip
+2. Extract and open project 
+3. Right click on solution and Restore Nuget Packges
+4. Build solution
+5. You can see test cases in Test Explorer now. 
